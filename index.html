@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="preload" href="irina-pix-right.jpg" as="image">
+    <link rel="preload" href="irina-jump.mp4" as="video">
+    <link rel="preload" href="irina-quiz.mp4" as="video">
+</head>
+
+<body>
+    <div class="container" id="mainContainer">
+        <!-- Scene title - appears above speech bubble -->
+        <div class="scene-title" id="sceneTitle"></div>
+
+        <!-- Speech bubble - appears above character -->
+        <div class="speech-bubble" id="speechBubble">
+            <div class="speech-content" id="speechContent"></div>
+            <div class="click-hint" id="clickHint">
+                <svg class="mouse-icon" viewBox="0 0 24 36" width="20" height="30">
+                    <rect class="mouse-body" x="4" y="0" width="16" height="28" rx="8" fill="none" stroke="#888"
+                        stroke-width="2" />
+                    <rect class="mouse-button" x="12" y="4" width="4" height="8" rx="2" fill="#888">
+                        <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite" />
+                    </rect>
+                    <line x1="12" y1="0" x2="12" y2="12" stroke="#888" stroke-width="1" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Character -->
+        <div class="character-wrapper" id="character">
+            <img src="irina-pix.jpg" alt="Pixel character" class="character-image" id="characterImg">
+            <img src="irina-pix-right.jpg" alt="Pixel character waving" class="character-image character-hover"
+                id="characterHoverImg">
+            <video src="irina-greet.mp4" class="character-video" id="greetVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-jump.mp4" class="character-video" id="characterVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-ofcourse.mp4" class="character-video" id="characterVideo2" muted playsinline
+                preload="auto" loop></video>
+            <video src="irina-quiz.mp4" class="character-video" id="quizVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-wrong.mp4" class="character-video" id="wrongVideo" muted playsinline
+                preload="auto"></video>
+            <video src="irina-correct.mp4" class="character-video" id="correctVideo" muted playsinline
+                preload="auto"></video>
+            <video src="irina-away.mp4" class="character-video" id="awayVideo" muted playsinline preload="auto"></video>
+            <video src="irina-sing.mp4" class="character-video" id="singVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-hairy.mp4" class="character-video" id="hairyVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-calm.mp4" class="character-video" id="calmVideo" muted playsinline preload="auto"></video>
+            <video src="irina-heart.mp4" class="character-video" id="heartVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-books.mp4" class="character-video" id="booksVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-booking.mp4" class="character-video" id="bookingVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-mother.mp4" class="character-video" id="motherVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-tech.mp4" class="character-video" id="techVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-amazing.mp4" class="character-video" id="amazingVideo" muted playsinline preload="auto"
+                loop></video>
+            <video src="irina-dance01.mp4" class="character-video" id="dance01Video" muted playsinline
+                preload="auto"></video>
+            <video src="irina-dance02.mp4" class="character-video" id="dance02Video" muted playsinline
+                preload="auto"></video>
+            <video src="irina-dance03.mp4" class="character-video" id="dance03Video" muted playsinline
+                preload="auto"></video>
+        </div>
+
+        <!-- Choice buttons (intro) -->
+        <div class="choice-buttons" id="choiceButtons">
+            <button class="choice-btn" id="boringBtn">Why not?</button>
+            <button class="choice-btn" id="smokyBtn">Of course!</button>
+        </div>
+
+        <!-- Quiz buttons -->
+        <div class="quiz-buttons" id="quizButtons">
+            <button class="quiz-btn" data-answer="empathetic">Empathetic</button>
+            <button class="quiz-btn" data-answer="bold">Bold</button>
+            <button class="quiz-btn" data-answer="creative">Creative</button>
+            <button class="quiz-btn" data-answer="fast">Fast</button>
+            <button class="quiz-btn" data-answer="funny">Funny</button>
+            <button class="quiz-btn" data-answer="mermaid">Lil mermaid</button>
+        </div>
+
+        <!-- Lyrics expander -->
+        <div class="lyrics-expander" id="lyricsExpander">
+            <div class="lyrics-header" id="lyricsHeader">
+                <span class="lyrics-toggle">▶</span> Sing-along!!!
+            </div>
+            <div class="lyrics-content" id="lyricsContent">
+                <h2>Marketing girl</h2>
+
+                <p class="verse-label">[verse 1]</p>
+                <p>The design's on the twelfth iteration today,<br>
+                    It's still "not quite right", what more can I say?<br>
+                    The content's too funny, but then it's too dry,<br>
+                    For the love of all deadlines, has anyone replied?<br>
+                    Likes and shares, likes and shares,<br>
+                    They echo in my brain,<br>
+                    But I nod and say, 'Let's do it again.'"</p>
+
+                <p class="verse-label">[Chorus]</p>
+                <p>AAAAA I'm just a marketing girl,<br>
+                    Your words are my art,<br>
+                    But don't push too hard,<br>
+                    Coz I a sensitive soul.</p>
+
+                <p class="verse-label">[verse 2]</p>
+                <p>I see slogans everywhere—they call, they inspire,<br>
+                    Even tomato tags set my neurons on fire.<br>
+                    Lines start appearing—they won't let me be,<br>
+                    Tapping my shoulder, like, "Hey! Write me down!"<br>
+                    I chase them, I shape them, then give them a tone,<br>
+                    And turn whispers of chaos to a solid wow.</p>
+
+                <p class="verse-label">[Chorus]</p>
+                <p>AAAAA I'm just a marketing girl,<br>
+                    Your words are my art,<br>
+                    But don't push too hard,<br>
+                    Coz I a sensitive soul.</p>
+
+                <p class="verse-label">[Bridge]</p>
+                <p>I'm either a genius or a burger side-fry,<br>
+                    A viral sensation or a "nice try."<br>
+                    There's no in-between, just chaos and art,<br>
+                    But maybe<br>
+                    (just maybe)<br>
+                    that's the beauty of my marketing heart.</p>
+
+                <p class="verse-label">[Chorus]</p>
+                <p>AAAAA I'm just a marketing girl,<br>
+                    Your words are my art,<br>
+                    But don't push too hard,<br>
+                    Coz I a sensitive soul.</p>
+
+                <p>AAAAA I'm just a marketing girl,<br>
+                    AAAAA I'm a sensitive soul.</p>
+            </div>
+        </div>
+
+        <!-- Full Story expander -->
+        <div class="story-expander" id="storyExpander">
+            <div class="story-header" id="storyHeader">
+                <span class="story-toggle">▶</span> Full story here!!
+            </div>
+            <div class="story-content" id="storyContent">
+                <h3>My Value & Superpower</h3>
+                <p>I'm the kind of person people call empathetic, creative, and fast. I like keeping things simple, but
+                    never dull.</p>
+                <p>Before I write anything, I slip into the mind of whoever will read it. I look for their itch or their
+                    spark, then shape the words that speak to that place. Ideas hit me without waiting their turn, and I
+                    tend to choose the bolder door over the safe corridor. And if there is one thing I can't stand, it's
+                    endless talk with no action. Thinking is sweet. Doing is sweeter.</p>
+
+                <h3>BHAG</h3>
+                <p>My big dreams?</p>
+                <ul>
+                    <li>A powerful international offline IntelliJ IDEA campaign that hits developers right in the heart.
+                    </li>
+                    <li>A fully AI-built campaign that draws strong engagement with light investment.</li>
+                    <li>I want to run creative sessions that push teams past the usual patterns and into the brave
+                        stuff.</li>
+                </ul>
+
+                <h3>My Story</h3>
+                <p>How I got here is a small saga. I started in the land of rules, writing technical documentation that
+                    left no place for fluff just clean language and logic. Then I drifted into travel at Booking.com and
+                    learned something delightful: people never just book a room. They worry about breakfast, dream about
+                    balconies, overthink everything. Even logistics have feelings.</p>
+                <p>Motherhood arrived with its chaotic charm. I picked up a camera, ran a blog, let life get noisy on
+                    purpose.</p>
+                <p>So when I returned to tech, I brought the whole mix with me. Precision and mess. Structure and
+                    intuition. Now I build campaigns that make sense to developers and still sound like they were
+                    written by a living, breathing human.</p>
+                <p>And yes, I have a few odd footnotes. I once translated for the executive producer of The Amazing
+                    Race. I also won a JetBrains hackathon, which I absolutely mention at least twice a year.</p>
+            </div>
+        </div>
+
+        <!-- Start Over button -->
+        <button class="start-over-btn" id="startOverBtn">START OVER</button>
+
+        <!-- Next button -->
+        <button class="next-btn" id="nextBtn">Next →</button>
+
+        <!-- Shapes puzzle -->
+        <div class="shapes-container" id="shapesContainer">
+            <div class="shapes-pool" id="shapesPool">
+                <div class="shape-card red" id="shapeRed" draggable="true" data-shape="red" data-correct="true">
+                    A powerful international offline IntelliJ IDEA campaign that touches developers' hearts.
+                </div>
+                <div class="shape-card blue" id="shapeBlue" draggable="true" data-shape="blue" data-correct="true">
+                    A fully AI-generated campaign with strong engagement and minimal investment.
+                </div>
+                <div class="shape-card yellow" id="shapeYellow" draggable="true" data-shape="yellow"
+                    data-correct="true">
+                    Creative sessions that help teams see beyond classic patterns.
+                </div>
+                <div class="shape-card white" id="shapeWhite" draggable="true" data-shape="white" data-correct="false">
+                    Wear a mascot costume and promote IntelliJ IDEA in Trafalgar Square.
+                </div>
+                <div class="shape-card green" id="shapeGreen" draggable="true" data-shape="green" data-correct="false">
+                    Hug a Gosling 🎬 - not the Java one.
+                </div>
+            </div>
+            <div class="shapes-drop-zone" id="dropZone">
+                <div class="drop-slot" data-position="2"><span class="slot-number">Goal 3</span></div>
+                <div class="drop-slot" data-position="1"><span class="slot-number">Goal 2</span></div>
+                <div class="drop-slot" data-position="0"><span class="slot-number">Goal 1</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
