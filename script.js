@@ -225,6 +225,13 @@ function handleCorrectAnswer(btn) {
     // Stop any current feedback animation
     stopCurrentFeedback();
 
+    // Check if this is the third correct answer - skip animation and go to scene transition
+    const correctButtons = document.querySelectorAll('.quiz-btn.correct');
+    if (correctButtons.length === 3) {
+        checkQuizComplete();
+        return;
+    }
+
     // Stop quiz video, play correct video
     character.classList.remove('quiz-playing');
     quizVideo.pause();
@@ -239,9 +246,6 @@ function handleCorrectAnswer(btn) {
         character.classList.remove('correct-playing');
         character.classList.add('quiz-playing');
         quizVideo.play();
-
-        // Check if all correct answers found
-        checkQuizComplete();
     };
 
     // Store cleanup function
@@ -288,11 +292,20 @@ function handleWrongAnswer(btn) {
 }
 
 function checkQuizComplete() {
-    const answeredButtons = document.querySelectorAll('.quiz-btn.correct, .quiz-btn.wrong');
-    const totalButtons = document.querySelectorAll('.quiz-btn').length;
+    const correctButtons = document.querySelectorAll('.quiz-btn.correct');
 
-    if (answeredButtons.length === totalButtons) {
-        // All answers chosen! Play away animation
+    // End quiz when 3 correct answers are found
+    if (correctButtons.length === 3) {
+        // Disable all remaining non-answered buttons
+        document.querySelectorAll('.quiz-btn').forEach(btn => {
+            if (!btn.classList.contains('correct') && !btn.classList.contains('wrong')) {
+                btn.classList.add('disabled');
+                btn.style.opacity = '0.5';
+                btn.style.cursor = 'not-allowed';
+            }
+        });
+
+        // All correct answers found! Play away animation
         stopCurrentFeedback();
         character.classList.remove('quiz-playing');
         quizVideo.pause();

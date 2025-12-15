@@ -487,7 +487,8 @@ body {
 .lyrics-expander {
     display: none;
     position: fixed;
-    right: 20px;
+    left: 50%;
+    margin-left: 240px;
     top: 120px;
     width: 300px;
     z-index: 50;
@@ -564,7 +565,8 @@ body {
 .story-expander {
     display: none;
     position: fixed;
-    right: 20px;
+    left: 50%;
+    margin-left: 240px;
     top: 180px;
     width: 350px;
     z-index: 200;
@@ -707,7 +709,8 @@ body {
     display: none;
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 50%;
+    margin-left: 440px;
     padding: 14px 28px;
     font-size: 16px;
     font-family: 'Courier New', monospace;
